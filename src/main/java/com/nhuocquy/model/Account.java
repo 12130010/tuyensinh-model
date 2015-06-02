@@ -1,6 +1,7 @@
 package com.nhuocquy.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -10,6 +11,9 @@ public class Account  {
 	private String username;
 	private String password;
 	private List<Friend> listFrs;
+	private List<Friend> listMakeFrs;
+	private String address;
+	private Date birthday;
 	private List<Conversation> conversations;
 
 	public Account() {
@@ -70,6 +74,30 @@ public class Account  {
 
 	public void setConversations(List<Conversation> conversations) {
 		this.conversations = conversations;
+	}
+
+	public List<Friend> getListMakeFrs() {
+		return listMakeFrs;
+	}
+
+	public void setListMakeFrs(List<Friend> listMakeFrs) {
+		this.listMakeFrs = listMakeFrs;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
 	@Override
