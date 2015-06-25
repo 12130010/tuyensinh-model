@@ -14,6 +14,7 @@ public class Account  {
 	private List<Friend> listMakeFrs;
 	private String address;
 	private Date birthday;
+	private String avatar;
 	private List<Conversation> conversations;
 
 	public Account() {
@@ -99,7 +100,9 @@ public class Account  {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-
+	public Friend retrieveAccountAsFriend(){
+		return new Friend(idAcc, name, avatar);
+	}
 	@Override
 	public String toString() {
 		return "Account [idAcc=" + idAcc + ", name=" + name + ", username="
@@ -107,7 +110,14 @@ public class Account  {
 				+ ", conversations=" + conversations + "]";
 	}
 
-	
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
 	
 
 }

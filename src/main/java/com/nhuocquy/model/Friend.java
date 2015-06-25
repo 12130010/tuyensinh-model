@@ -5,6 +5,7 @@ package com.nhuocquy.model;
 public class Friend{
 	private long idFriend;
 	private String name;
+	private String avatar;
 
 	public Friend() {
 	}
@@ -13,6 +14,13 @@ public class Friend{
 		super();
 		this.idFriend = idFriend;
 		this.name = name;
+	}
+
+	public Friend(long idFriend, String name, String avatar) {
+		super();
+		this.idFriend = idFriend;
+		this.name = name;
+		this.avatar = avatar;
 	}
 
 	public long getIdFriend() {
@@ -29,6 +37,15 @@ public class Friend{
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
 	}
 
 	@Override
