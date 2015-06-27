@@ -1,26 +1,46 @@
 package com.nhuocquy.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class MessageChat {
+public class MessageChat implements Serializable {
+	private static final long serialVersionUID = 4855247675318069736L;
 	private long idMes;
-	private long idSender;
-	private String fromName;
 	private String text;
 	private Date date;
 	private long idConversation;
+//	private long idSender;
+//	private String fromName;
+	private Friend sender;
 
 	public MessageChat() {
 	}
 
-	public MessageChat(long idMes, long idSender, String fromName, String text,
-			Date date) {
-		super();
+//	public MessageChat(long idMes, long idSender, String fromName, String text,
+//			Date date) {
+//		super();
+//		this.idMes = idMes;
+//		this.idSender = idSender;
+//		this.fromName = fromName;
+//		this.text = text;
+//		this.date = date;
+//	}
+
+	public MessageChat(long idMes, String text, Date date, long idConversation,
+			Friend sender) {
 		this.idMes = idMes;
-		this.idSender = idSender;
-		this.fromName = fromName;
 		this.text = text;
 		this.date = date;
+		this.idConversation = idConversation;
+		this.sender = sender;
+	}
+
+	public Friend getSender() {
+		return sender;
+	}
+
+	public void setSender(Friend sender) {
+		this.sender = sender;
 	}
 
 	public long getIdMes() {
@@ -32,11 +52,10 @@ public class MessageChat {
 	}
 
 	public long getIdSender() {
-		return idSender;
+		return sender.getIdFriend();
 	}
 
 	public void setIdSender(long idSender) {
-		this.idSender = idSender;
 	}
 
 	public String getText() {
@@ -56,11 +75,10 @@ public class MessageChat {
 	}
 
 	public String getFromName() {
-		return fromName;
+		return sender.getName();
 	}
 
 	public void setFromName(String fromName) {
-		this.fromName = fromName;
 	}
 
 	public long getIdConversation() {
